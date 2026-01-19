@@ -3,11 +3,13 @@ include:
   # Corne left half (nice_nano_v2, no display/LED)
   - board: nice_nano_v2
     shield: corne_left
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="KorneKball"
     artifact: corne_left
 
   # Corne right half (nice_nano_v2, no display/LED)
   - board: nice_nano_v2
     shield: corne_right
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="KorneKball"
     artifact: corne_right
 
   # Settings reset (flash first to clear BT bonds)
