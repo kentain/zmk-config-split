@@ -2,7 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mods.h>
 
 / {
     keymap {
@@ -52,7 +51,7 @@
                 &kp END     &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
 
                 &uc_mods_lin &uc_mods 0x00E0 &uc_mods 0x00AB &uc_mods 0x00BB &uc_mods 0x00E9 &uc_mods 0x00E8
-                &kp TB_CLICK  &kp TB_LEFT &kp TP_UP   &kp TP_RIGHT &mkp MS_RIGHT &kp BSLS
+                &kp TB_CLICK  &kp TB_LEFT &kp TB_UP   &kp TB_RIGHT &mkp MS_RIGHT &kp BSLS
 
                 &trans      &kp TP_DOWN      &trans
                 &mkp MS_MIDDLE &trans &tb_dn  // Trackball down if wired
