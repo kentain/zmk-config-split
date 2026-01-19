@@ -12,7 +12,7 @@
         base {
             bindings = <
                 &kp ESC     &kp B     &kp W     &kp P     &kp O     &kp T
-                &kp PSCR    &kp V     &kp D     &kp L     &kp J     &kp Z
+                &kp DEL     &kp V     &kp D     &kp L     &kp J     &kp Z
 
                 &kp TAB     &kp A     &kp U     &lt LALT KC_I  &lt LSFT KC_E  &kp COMM
                 &lt 3 KC_C  &lt 6 KC_T &kp S     &kp R     &kp N     &kp M
@@ -38,7 +38,7 @@
                 &kp EQUAL   &kp N1    &kp N2    &kp N3    &kp ASTRK &kp SLASH
 
                 &kp CAPS    &trans    &kp HASH
-                &trans      &trans    &trans
+                &trans      &kp N0    &trans
             >;
         };
 
@@ -46,15 +46,15 @@
         f_media_mouse {
             bindings = <
                 &kp F1      &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
-                &kp HOME    &trans    &mv UP    &trans    &trans    &trans
+                &kp HOME    &trans    &kp UP    &trans    &trans    &trans
 
                 &kp F7      &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-                &kp END     &mv LEFT  &mv DOWN  &mv RIGHT &trans    &trans
+                &kp END     &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
 
                 &uc_mods_lin &uc_mods 0x00E0 &uc_mods 0x00AB &uc_mods 0x00BB &uc_mods 0x00E9 &uc_mods 0x00E8
-                &mkp MS_LEFT &mv LEFT &mv UP   &mv RIGHT &mkp MS_RIGHT &kp BSLS
+                &kp TB_CLICK  &kp TB_LEFT &kp TP_UP   &kp TP_RIGHT &mkp MS_RIGHT &kp BSLS
 
-                &trans      &kp NUHS  &trans
+                &trans      &kp TP_DOWN      &trans
                 &mkp MS_MIDDLE &trans &tb_dn  // Trackball down if wired
             >;
         };

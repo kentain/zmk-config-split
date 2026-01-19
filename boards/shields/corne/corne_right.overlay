@@ -25,4 +25,14 @@
         ;
 };
 
+/ {
+    aliases {
+        tb_up = &trackball_gpios 6;
+        tb_down = &trackball_gpios 7;
+        tb_left = &trackball_gpios 2;
+        tb_right = &trackball_gpios 1;
+        tb_click = &trackball_gpios 10;
+    };
+};
+
 // vim: filetype=dts fdm=marker:
