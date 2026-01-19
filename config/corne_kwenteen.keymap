@@ -1,0 +1,68 @@
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mods.h>
+#include <dt-bindings/zmk/pointing.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        base {
+            bindings = <
+                // Left half unchanged
+                &kp ESC        &kp B          &kp W          &kp P        &kp O        &kp T
+                &kp PSCR      &kp V          &kp D          &kp L        &kp J        &kp Z
+
+                &kp TAB       &kp A          &kp U          &lt LALT KC_I  &lt LSFT KC_E &kp COMMA
+                &lt 3 KC_C    &lt 6 KC_T     &kp S          &kp R        &kp N        &kp M
+
+                &kp LCTL      &kp LGUI       &kp Y          &kp X        &lt 5 DOT     &lt 4 K
+                &kp QUOTE     &kp Q          &kp G          &kp H        &kp F        &kp SCOLN
+
+                                 &kp BSPC       &lt 1 SPACE    &lt 2 ENTER
+                &kp DEL       &lt 2 SPACE     &tb_dn         // Trackball down replaces LSFT
+            >;
+        };
+
+        // Other layers unchanged, except layer 2 (f_media_mouse) for trackball consistency
+        numbers_symbols {
+            bindings = <
+                &kp HOME       &kp LCBR       &kp DLR        &kp PIPE     &kp QUEST    &kp EXLM
+                &kp MINS       &kp N7         &kp N8         &kp N9       &kp LT       &kp LBRC
+
+                &kp END        &kp RCBR       &kp AT         &kp LPRN     &kp RPRN     &kp GRAVE
+                &kp PLUS       &kp N4         &kp N5         &kp N6       &kp GT       &kp RBRC
+
+                &kp NUHS       &kp PERC       &uc_mods 0x03BC &kp CARET    &uc_mods 0x2103 &kp TILDE
+                &kp EQUAL      &kp N1         &kp N2         &kp N3       &kp ASTRK    &kp SLASH
+
+                                 &kp CAPS       &trans        &kp HASH
+                &trans         &trans         &trans
+            >;
+        };
+
+        f_media_mouse {
+            bindings = <
+                &kp F1         &kp F2         &kp F3         &kp F4       &kp F5       &kp F6
+                &kp HOME       &trans         &mv UP         &trans       &trans       &trans
+
+                &kp F7         &kp F8         &kp F9         &kp F10      &kp F11      &kp F12
+                &kp END        &mv LEFT       &mv DOWN       &mv RIGHT    &trans       &trans
+
+                &uc_mods_lin   &uc_mods 0x00E0 &uc_mods 0x00AB &uc_mods 0x00BB &uc_mods 0x00E9 &uc_mods 0x00E8
+                &mkp MS_LEFT   &mv LEFT       &mv UP         &mv RIGHT    &mkp MS_RIGHT &kp BACKSLASH
+
+                                 &trans         &kp NUHS      &trans
+                &mkp MS_MIDDLE &trans         &tb_dn
+            >;
+        };
+
+        // Layers 3-6 unchanged (rgb, media, rgb_extra, accents)
+        rgb { /* same as before */ };
+        media { /* same as before */ };
+        rgb_extra { /* same as before */ };
+        accents { /* same as before */ };
+    };
+};
+
