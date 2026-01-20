@@ -27,17 +27,17 @@
         // Layer 1: Numbers/Symbols (TO 1)
         numbers_symbols {
             bindings = <
-                &kp HOME    &kp LCBR  &kp DLR   &kp PIPE  &kp QUEST &kp EXLM
-                &kp MINS    &kp N7    &kp N8    &kp N9    &kp LT    &kp LBRC
+                &kp HOME    &kp LCBR  &kp DLR   &kp PIPE2  &kp QUESTION &kp EXCLAMATION
+                &kp MINUS    &kp N7    &kp N8    &kp N9    &kp LT    &kp LBRC
 
-                &kp END     &kp RCBR  &kp AT    &kp LPRN  &kp RPRN  &kp GRAVE
-                &kp PLUS    &kp N4    &kp N5    &kp N6    &kp GT    &kp RBRC
+                &kp END     &kp RCBR  &kp AT    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE
+                &kp PLUS    &kp N4    &kp N5    &kp N6    &kp GT    &kp RIGHT_BRACKET
 
-                &kp NUHS    &kp PERC  &uc_mods 0x03BC &kp CARET &uc_mods 0x2103 &kp TILDE
+                &kp NUHS    &kp PERCENT  &uc_mods 0x03BC &kp CARET &uc_mods 0x2103 &kp TILDE
                 &kp EQUAL   &kp N1    &kp N2    &kp N3    &kp ASTRK &kp SLASH
 
                 &kp CAPS    &trans    &kp HASH
-                &trans      &kp N0    &trans
+                &trans      &kp N0    &kp AMPERSAND
             >;
         };
 
