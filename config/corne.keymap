@@ -17,7 +17,7 @@
                 &lt 3 C     &lt 6 T   &kp S     &kp R     &kp N     &kp M
 
                 &kp LCTL    &kp LGUI  &kp Y     &kp X     &lt 5 DOT    &lt 4 K
-                &kp QUOTE   &kp Q     &kp G     &kp H     &kp F     &kp SEMICOLON
+                &kp SINGLE_QUOTE   &kp Q     &kp G     &kp H     &kp F     &kp SEMICOLON
 
                 &kp BACKSPACE    &lt 1 SPACE   &lt 2 ENTER
                 &kp DELETE     &lt 2 SPACE   &kp LSHIFT
