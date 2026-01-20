@@ -13,7 +13,7 @@
                 &kp ESC     &kp B     &kp W     &kp P     &kp O     &kp T
                 &kp DEL     &kp V     &kp D     &kp L     &kp J     &kp Z
 
-                &kp TAB     &kp A     &kp U     &lt LALT KC_I  &lt LSFT KC_E  &kp COMM
+                &kp TAB     &kp A     &kp U     &lt 0 LALT KC_I  &lt 0 LSFT KC_E  &kp COMM
                 &lt 3 KC_C  &lt 6 KC_T &kp S     &kp R     &kp N     &kp M
 
                 &kp LCTL    &kp LGUI  &kp Y     &kp X     &lt 5 DOT    &lt 4 K
