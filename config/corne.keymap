@@ -75,8 +75,8 @@
         // Layer 4: Media
         media {
             bindings = <
-                &kp SLEEP   &kp MSEL  &trans    &kp MUTE  &kp VOLD  &kp VOLU
-                &trans     &kp MRWD   &kp MPRV  &kp MPLY  &kp MNXT  &kp MFFD
+                &kp C_SLEEP   &trans  &trans    &kp C_MUTE  &kp C_VOLUME_DOWNC  &kp C_VOLUME_UP
+                &trans     &kp C_REWIND   &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_FAST_FORWARD
 
                 &trans     &kp UNDO   &kp CUT   &kp COPY  &kp PSTE  &trans
                 &trans     &trans    &trans    &trans    &trans    &trans
