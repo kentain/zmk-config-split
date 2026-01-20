@@ -11,16 +11,16 @@
         base {
             bindings = <
                 &kp ESC     &kp B     &kp W     &kp P     &kp O     &kp T
-                &kp DEL     &kp V     &kp D     &kp L     &kp J     &kp Z
+                &kp DELETE     &kp V     &kp D     &kp L     &kp J     &kp Z
 
                 &kp TAB     &kp A     &kp U     &mt LALT I  &mt LSHIFT E  &kp COMMA
                 &lt 3 C     &lt 6 T   &kp S     &kp R     &kp N     &kp M
 
                 &kp LCTL    &kp LGUI  &kp Y     &kp X     &lt 5 DOT    &lt 4 K
-                &kp QUOTE   &kp Q     &kp G     &kp H     &kp F     &kp SCOLN
+                &kp QUOTE   &kp Q     &kp G     &kp H     &kp F     &kp SEMICOLON
 
-                &kp BSPC    &lt 1 SPC   &lt 2 RET
-                &kp DEL     &lt 2 SPC   &kp LSFT
+                &kp BACKSPACE    &lt 1 SPACE   &lt 2 ENTER
+                &kp DELETE     &lt 2 SPACE   &kp LSHIFT
             >;
         };
 
@@ -51,7 +51,7 @@
                 &kp END     &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
 
                 &uc_mods_lin    &uc_mods 0x00E0    &uc_mods 0x00AB      &uc_mods 0x00BB     &uc_mods 0x00E9     &uc_mods 0x00E8
-                &kp TB_CLICK    &kp TB_LEFT         &kp TB_UP           &kp TB_RIGHT        &mkp MS_RIGHT       &kp BSLS
+                &kp TB_CLICK    &kp TB_LEFT         &kp TB_UP           &kp TB_RIGHT        &mkp MS_RIGHT       &kp BACKSLASH
 
                 &trans          &kp TB_DOWN      &trans
                 &mkp MS_MIDDLE  &trans          &trans
