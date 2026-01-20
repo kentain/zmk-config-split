@@ -81,7 +81,7 @@
                 &trans     &kp UNDO   &kp CUT   &kp COPY  &kp PSTE  &trans
                 &trans     &trans    &trans    &trans    &trans    &trans
 
-                &trans     &trans    &trans    &trans    &trans    &trans
+                &bt BT_CLR     &bt BT_SEL 0	&bt BT_SEL 1    &bt BT_SEL 2    &trans    &trans
                 &trans     &trans    &trans
             >;
         };
@@ -89,10 +89,10 @@
         // Layer 5: RGB/LED Extra (simplified)
         rgb_extra {
             bindings = <
-                &trans     &led_hue- &led_hue+ &led_sat- &led_sat+ &trans
-                &trans     &led_val- &led_val+ &trans   &trans    &led_tog
+                &trans     &trans &trans &trans &trans &trans
+                &trans     &trans &trans &trans   &trans    &led_tog
 
-                &trans     &led_spd+ &led_spd- &trans   &trans    &trans
+                &trans     &trans &trans &trans   &trans    &trans
                 &trans     &trans    &trans    &trans   &trans    &trans
 
                 &trans     &trans    &trans    &trans   &trans    &trans
