@@ -13,14 +13,14 @@
                 &kp ESC     &kp B     &kp W     &kp P     &kp O     &kp T
                 &kp DEL     &kp V     &kp D     &kp L     &kp J     &kp Z
 
-                &kp TAB     &kp A     &kp U     &mt LALT I  &mt LSFT E  &kp COMM
-                &lt 3 C     &lt 6 T   &kp S     &kp R     &kp N     &kp M
+                &kp TAB     &kp A     &kp U     &mt LALT &kp I  &mt LSFT &kp E  &kp COMM
+                &lt 3 &kp C     &lt 6 &kp T   &kp S     &kp R     &kp N     &kp M
 
-                &kp LCTL    &kp LGUI  &kp Y     &kp X     &lt 5 DOT    &lt 4 K
+                &kp LCTL    &kp LGUI  &kp Y     &kp X     &lt 5 &kp DOT    &lt 4 &kp K
                 &kp QUOTE   &kp Q     &kp G     &kp H     &kp F     &kp SCOLN
 
-                &kp BSPC    &lt 1 SPC   &lt 2 RET
-                &kp DEL     &lt 2 SPC   &kp LSFT
+                &kp BSPC    &lt 1 &kp SPC   &lt 2 RET
+                &kp DEL     &lt 2 &kp SPC   &kp LSFT
             >;
         };
 
