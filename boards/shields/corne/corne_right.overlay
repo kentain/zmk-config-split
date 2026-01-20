@@ -27,9 +27,9 @@
 
 / {
     aliases {
-        tb_up = &trackball_gpios 0;
-        tb_down = &trackball_gpios 1;
-        tb_left = &trackball_gpios 2;
+        tb_up    = &trackball_gpios 0;
+        tb_down  = &trackball_gpios 1;
+        tb_left  = &trackball_gpios 2;
         tb_right = &trackball_gpios 3;
         tb_click = &trackball_gpios 4;
     };

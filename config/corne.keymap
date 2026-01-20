@@ -50,11 +50,11 @@
                 &kp F7      &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
                 &kp END     &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
 
-                &uc_mods_lin &uc_mods 0x00E0 &uc_mods 0x00AB &uc_mods 0x00BB &uc_mods 0x00E9 &uc_mods 0x00E8
-                &kp TB_CLICK  &kp TB_LEFT &kp TB_UP   &kp TB_RIGHT &mkp MS_RIGHT &kp BSLS
+                &uc_mods_lin    &uc_mods 0x00E0    &uc_mods 0x00AB      &uc_mods 0x00BB     &uc_mods 0x00E9     &uc_mods 0x00E8
+                &kp TB_CLICK    &kp TB_LEFT         &kp TB_UP           &kp TB_RIGHT        &mkp MS_RIGHT       &kp BSLS
 
-                &trans      &kp TB_DOWN      &trans
-                &mkp MS_MIDDLE &trans &trans
+                &trans          &kp TB_DOWN      &trans
+                &mkp MS_MIDDLE  &trans          &trans
             >;
         };
 
