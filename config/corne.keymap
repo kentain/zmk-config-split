@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     keymap {
@@ -51,7 +52,7 @@
                 &kp END     &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
 
                 &uc_mods_lin    &uc_mods 0x00E0    &uc_mods 0x00AB      &uc_mods 0x00BB     &uc_mods 0x00E9     &uc_mods 0x00E8
-                &trans    &trans         &trans     &trans        &trans       &kp BACKSLASH
+                &mkp LCLK   &mkp RCLK        &mkp MCLK     &mkp MB4        &mkp MB5       &kp BACKSLASH
 
                 &trans          &trans      &trans
                 &trans  &trans          &trans
@@ -103,11 +104,11 @@
         // Layer 6: Accents/Unicode
         accents {
             bindings = <
-                &trans      &uc_mods 0x03B2  &trans    &trans    &uc_mods 0x2126 &trans
-                &trans      &uc_mods 0x0251  &trans    &trans    &uc_mods 0x03B5 &trans
+                &trans      &trans  &trans    &trans    &trans &trans
+                &trans      &trans  &trans    &trans    &trans &trans
 
                 &trans      &trans    &trans    &trans    &trans    &trans
-                &trans      &trans    &uc_mods 0x03B3 &trans    &trans    &trans
+                &trans      &trans    &trans &trans    &trans    &trans
 
                 &trans      &trans    &trans    &trans    &trans    &trans
                 &trans      &trans    &trans
