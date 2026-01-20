@@ -13,7 +13,7 @@
                 &kp ESC     &kp B     &kp W     &kp P     &kp O     &kp T
                 &kp DEL     &kp V     &kp D     &kp L     &kp J     &kp Z
 
-                &kp TAB     &kp A     &kp U     &mt LALT I  &mt LSFT E  &kp COMM
+                &kp TAB     &kp A     &kp U     &mt LALT I  &mt LSHIFT E  &kp COMMA
                 &lt 3 C     &lt 6 T   &kp S     &kp R     &kp N     &kp M
 
                 &kp LCTL    &kp LGUI  &kp Y     &kp X     &lt 5 DOT    &lt 4 K
@@ -81,7 +81,7 @@
                 &trans     &kp UNDO   &kp CUT   &kp COPY  &kp PSTE  &trans
                 &trans     &trans    &trans    &trans    &trans    &trans
 
-                &trans     &trans    &trans    &trans    &trans    &TO 3
+                &trans     &trans    &trans    &trans    &trans    &trans
                 &trans     &trans    &trans
             >;
         };
@@ -95,7 +95,7 @@
                 &trans     &led_spd+ &led_spd- &trans   &trans    &trans
                 &trans     &trans    &trans    &trans   &trans    &trans
 
-                &trans     &trans    &trans    &trans   &trans    &TO 3
+                &trans     &trans    &trans    &trans   &trans    &trans
                 &trans     &trans    &trans
             >;
         };
@@ -109,7 +109,7 @@
                 &trans      &trans    &trans    &trans    &trans    &trans
                 &trans      &trans    &uc_mods 0x03B3 &trans    &trans    &trans
 
-                &trans      &trans    &trans    &trans    &trans    &TO 0
+                &trans      &trans    &trans    &trans    &trans    &trans
                 &trans      &trans    &trans
             >;
         };
