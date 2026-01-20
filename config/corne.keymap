@@ -62,7 +62,7 @@
         // Layer 3: BT/Boot/LED (TO 3, simplified no full RGB)
         bt_boot {
             bindings = <
-                &bootloader &sysrp    &led_tog  &trans    &trans    &trans  // LED P1.04 toggle
+                &bootloader &kp C_SLEEP   &led_tog  &trans    &trans    &trans  // LED P1.04 toggle
                 &trans     &trans    &trans    &trans    &trans    &trans
 
                 &trans     &trans    &trans    &trans    &trans    &trans
