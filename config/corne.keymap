@@ -17,14 +17,14 @@
         // Layer 0: Base
         base {
             bindings = <
-                &kp ESC     &kp B     &kp W     &kp P     &kp O     &kp T
+                &kp ESC     &kp B     &kp W     &kp P     &kp O     &kp SEMICOLON
                 &kp DELETE     &kp V     &kp D     &kp L     &kp J     &kp Z
 
                 &kp TAB     &kp A     &kp U     &mt LALT I  &mt LSHIFT E  &kp COMMA
                 &lt 3 C     &lt 6 T   &kp S     &kp R     &kp N     &kp M
 
                 &kp LCTL    &kp LGUI  &kp Y     &kp X     &lt 5 DOT    &lt 4 K
-                &kp SINGLE_QUOTE   &kp Q     &kp G     &kp H     &kp F     &kp SEMICOLON
+                &kp SINGLE_QUOTE   &kp Q     &kp G     &kp H     &kp F     &kp PRINTSCREEN
 
                 &kp BACKSPACE    &lt 1 SPACE   &lt 2 ENTER
                 &kp DELETE     &lt 2 SPACE   &kp LSHIFT
@@ -46,18 +46,18 @@
                 &kp CAPS    &trans    &kp HASH
                 &trans      &kp N0    &kp AMPERSAND
             >;
-        };
+        };#
 
         // Layer 2: F-keys/Media/Mouse (TO 2)
         f_media_mouse {
             bindings = <
                 &kp F1      &kp F2    &kp F3    &kp F4    &kp F5    &kp F6    
-                &kp C_AC_SCROLL_UP   &kp LC(LEFT)   &kp UP   &kp LC(RIGHT)     &trans    &trans  //should give me previous and next word (ctrl+ left or ctrl+right)
+                &kp K_SCROLL_UP   &kp LC(LEFT)   &kp UP   &kp LC(RIGHT)     &trans    &trans  //should give me previous and next word (ctrl+ left or ctrl+right)
 
                 &kp F7      &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-                &kp C_AC_SCROLL_DOWN     &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
+                &kp K_SCROLL_DOWN     &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
 
-                &trans    &trans    &trans      &trans     &trans     &trans
+                &trans    &trans    &trans      &trans     &kp AMPERSAND     &kp UNDERSCORE
                 &mkp LCLK   &mkp RCLK        &mkp MCLK     &mkp MB4        &mkp MB5       &kp BACKSLASH
 
                 &trans          &trans      &trans
