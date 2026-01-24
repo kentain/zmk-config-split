@@ -46,7 +46,7 @@
                 &kp CAPS    &trans    &kp HASH
                 &trans      &kp N0    &kp AMPERSAND
             >;
-        };#
+        };
 
         // Layer 2: F-keys/Media/Mouse (TO 2)
         f_media_mouse {
