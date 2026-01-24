@@ -40,7 +40,7 @@
                 &kp END     &kp RBKT  &kp AT    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE
                 &kp PLUS    &kp N4    &kp N5    &kp N6    &kp GT    &kp RBRC
 
-                &kp NUHS    &kp PERCENT  &uc 0x00B5 &uc 0x00B0 &kp EXCLAMATION &kp TILDE
+                &kp NUHS    &kp PERCENT  &uc 00B5 &uc 00B0 &kp EXCLAMATION &kp TILDE
                 &kp EQUAL   &kp N1    &kp N2    &kp N3    &kp ASTRK &kp SLASH
 
                 &kp CAPS    &trans    &kp HASH
@@ -71,10 +71,10 @@
                 &bootloader &kp C_SLEEP   &trans  &trans    &trans    &trans  
                 &trans     &trans    &trans    &trans    &trans    &trans
 
-                &trans     &uc 0x00E0    &uc 0x00E8    &uc 0x00E9   &trans    &trans
+                &trans     &uc 00E0    &uc 00E8    &uc 00E9   &trans    &trans
                 &trans     &trans    &trans    &trans    &trans    &trans
 
-                &uc 0x03B2    &uc 0x1D6C2  &uc 0x1F431  &trans    &trans    &trans
+                &uc 03B2    &uc 1D6C2  &uc 1F431  &trans    &trans    &trans
                 &trans     &trans    &trans    &trans    &trans
             >;
         };
