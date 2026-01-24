@@ -1,8 +1,14 @@
 #include <behaviors.dtsi>
+#include <behaviors/unicode.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <zmk-unicode/keys-extra.h>
+
+&uc {
+  default-mode = <UC_MODE_LINUX>;  // Replace with desired input system.
+};
 
 / {
     keymap {
@@ -32,9 +38,9 @@
                 &kp MINUS    &kp N7    &kp N8    &kp N9    &kp LT    &kp LBRC
 
                 &kp END     &kp RBKT  &kp AT    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE
-                &kp PLUS    &kp N4    &kp N5    &kp N6    &kp GT    &kp RIGHT_BRACKET
+                &kp PLUS    &kp N4    &kp N5    &kp N6    &kp GT    &kp RBRC
 
-                &kp NUHS    &kp PERCENT  &trans &kp CARET &trans &kp TILDE
+                &kp NUHS    &kp PERCENT  &uc 0x00B5 &uc 0x00B0 &kp EXCLAMATION &kp TILDE
                 &kp EQUAL   &kp N1    &kp N2    &kp N3    &kp ASTRK &kp SLASH
 
                 &kp CAPS    &trans    &kp HASH
@@ -45,11 +51,11 @@
         // Layer 2: F-keys/Media/Mouse (TO 2)
         f_media_mouse {
             bindings = <
-                &kp F1      &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
-                &kp HOME    &trans    &kp UP    &trans    &trans    &trans
+                &kp F1      &kp F2    &kp F3    &kp F4    &kp F5    &kp F6    
+                &kp C_AC_SCROLL_UP   &kp LC(LEFT)   &kp UP   &kp LC(RIGHT)     &trans    &trans  //should give me previous and next word (ctrl+ left or ctrl+right)
 
                 &kp F7      &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-                &kp END     &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
+                &kp C_AC_SCROLL_DOWN     &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
 
                 &trans    &trans    &trans      &trans     &trans     &trans
                 &mkp LCLK   &mkp RCLK        &mkp MCLK     &mkp MB4        &mkp MB5       &kp BACKSLASH
@@ -65,10 +71,10 @@
                 &bootloader &kp C_SLEEP   &trans  &trans    &trans    &trans  
                 &trans     &trans    &trans    &trans    &trans    &trans
 
-                &trans     &trans    &trans    &trans    &trans    &trans
+                &trans     &uc 0x00E0    &uc 0x00E8    &uc 0x00E9   &trans    &trans
                 &trans     &trans    &trans    &trans    &trans    &trans
 
-                &trans     &trans    &trans    &trans    &trans    &trans
+                &uc 0x03B2    &uc 0x1D6C2  &uc 0x1F431  &trans    &trans    &trans
                 &trans     &trans    &trans    &trans    &trans
             >;
         };
