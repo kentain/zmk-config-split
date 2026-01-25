@@ -54,6 +54,7 @@
 / {
     trackball: trackball {
         compatible = "zmk,input-bb-trackball";
+        status = "okay";
         // Pins for Up, Down, Left, Right
         // Use (GPIO_ACTIVE_LOW | GPIO_PULL_UP) if they are open-drain/switches
         up-gpios    = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;

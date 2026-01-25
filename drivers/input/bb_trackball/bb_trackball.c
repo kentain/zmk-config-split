@@ -70,14 +70,20 @@ static int bb_trackball_init(const struct device *dev) {
     return 0;
 }
 
-static const struct bb_trackball_config bb_cfg = {
-    .up_gpio = GPIO_DT_SPEC_INST_GET(0, up_gpios),
-    .down_gpio = GPIO_DT_SPEC_INST_GET(0, down_gpios),
-    .left_gpio = GPIO_DT_SPEC_INST_GET(0, left_gpios),
-    .right_gpio = GPIO_DT_SPEC_INST_GET(0, right_gpios),
-};
+#define DT_DRV_COMPAT zmk_input_bb_trackball
 
-static struct bb_trackball_data bb_data;
+#define BB_TRACKBALL_DEFINE(inst)                                             \
+    static const struct bb_trackball_config bb_cfg_##inst = {                 \
+        .up_gpio    = GPIO_DT_SPEC_INST_GET(inst, up_gpios),                  \
+        .down_gpio  = GPIO_DT_SPEC_INST_GET(inst, down_gpios),                \
+        .left_gpio  = GPIO_DT_SPEC_INST_GET(inst, left_gpios),                \
+        .right_gpio = GPIO_DT_SPEC_INST_GET(inst, right_gpios),               \
+    };                                                                        \
+                                                                              \
+    static struct bb_trackball_data bb_data_##inst;                           \
+                                                                              \
+    DEVICE_DT_INST_DEFINE(inst, bb_trackball_init, NULL,                      \
+                          &bb_data_##inst, &bb_cfg_##inst,                    \
+                          POST_KERNEL, CONFIG_INPUT_INIT_PRIORITY, NULL);
 
-DEVICE_DT_INST_DEFINE(0, bb_trackball_init, NULL, &bb_data, &bb_cfg,
-                      POST_KERNEL, CONFIG_INPUT_INIT_PRIORITY, NULL);
+DT_INST_FOREACH_STATUS_OKAY(BB_TRACKBALL_DEFINE)
