@@ -1,0 +1,17 @@
+description: Blackberry Trackball (4 GPIOs)
+compatible: "zmk,input-bb-trackball"
+include: [sensor-device.yaml]
+
+properties:
+  up-gpios:
+    type: phandle-array
+    required: true
+  down-gpios:
+    type: phandle-array
+    required: true
+  left-gpios:
+    type: phandle-array
+    required: true
+  right-gpios:
+    type: phandle-array
+    required: true

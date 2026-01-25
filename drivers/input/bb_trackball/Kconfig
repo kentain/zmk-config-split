@@ -1,0 +1,7 @@
+config BB_TRACKBALL
+    bool "Blackberry Trackball Driver"
+    default y
+    depends on DT_HAS_ZMK_INPUT_BB_TRACKBALL_ENABLED
+    select INPUT
+    help
+      Driver for Blackberry style trackball with 4 GPIO directional outputs.

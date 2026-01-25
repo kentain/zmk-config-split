@@ -1,4 +1,7 @@
+name: zmk_config_module
 build:
+  cmake: drivers
+  kconfig: drivers/Kconfig
   settings:
     board_root: .
     snippet_root: .
