@@ -13,8 +13,8 @@
 / {
     behaviors {
       lt {
-        tapping-term-ms = <240>;  /* default is 200 */
-        require-prior-idle-ms = <120>; /* try 100-150 */
+        tapping-term-ms = <280>;  /* default is 200 */
+        require-prior-idle-ms = <150>; /* try 100-150 */
         /* you can also set flavor here, but timing is usually the first fix */
         /* flavor = "tap-preferred"; is the default for layer-tap */
       };
