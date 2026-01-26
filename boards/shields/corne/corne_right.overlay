@@ -62,7 +62,7 @@
         left-gpios  = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         right-gpios = <&gpio0 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
-
+  };
 /* This is the important part: tell the split proxy what device to forward */
 &trackball_split {
     device = <&trackball>;
@@ -70,7 +70,7 @@
     /* Optional: if you need axis fixes before sending to central, add processors here */
     /* input-processors = <(INPUT_TRANSFORM_X_INVERT)>; */
     };
-  };
+
 
 // Enable ZMK mouse emulation listener
 &pinctrl {
