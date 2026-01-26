@@ -1,0 +1,80 @@
+/*
+ * Copyright (c) 2020 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "corne.dtsi"
+
+&default_transform {
+    col-offset = <6>;
+};
+
+&five_column_transform {
+    col-offset = <6>;
+};
+
+&kscan0 {
+    col-gpios
+        = <&pro_micro 14 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 21 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+/// {
+//  tb_kscan: tb_kscan {
+//    compatible = "zmk,kscan-gpio-direct";
+//    input-gpios =
+//        <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* up */
+//      , <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* down */
+//      , <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* left */
+//      , <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* right */
+//      , <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* click */
+//      ;
+//  };
+
+//  tb_sideband: tb_sideband {
+//    compatible = "zmk,kscan-sideband-behaviors";
+//    kscan = <&tb_kscan>;
+//    auto-enable;
+//    wakeup-source;
+//
+//    up    { column = <0>; bindings = <&mmv MOVE_UP>; };
+//    down  { column = <1>; bindings = <&mmv MOVE_DOWN>; };
+//    left  { column = <2>; bindings = <&mmv MOVE_LEFT>; };
+//    right { column = <3>; bindings = <&mmv MOVE_RIGHT>; };
+//    click { column = <4>; bindings = <&mkp LCLK>; };
+//  };
+//};
+
+/ {
+    trackball: trackball {
+        compatible = "zmk,input-bb-trackball";
+        status = "okay";
+        // Pins for Up, Down, Left, Right
+        // Use (GPIO_ACTIVE_LOW | GPIO_PULL_UP) if they are open-drain/switches
+        up-gpios    = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        down-gpios  = <&gpio0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        left-gpios  = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        right-gpios = <&gpio0 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+  };
+/* This is the important part: tell the split proxy what device to forward */
+&trackball_split {
+    device = <&trackball>;
+
+    /* Optional: if you need axis fixes before sending to central, add processors here */
+    /* input-processors = <(INPUT_TRANSFORM_X_INVERT)>; */
+    };
+
+
+// Enable ZMK mouse emulation listener
+&pinctrl {
+    // any pinctrl definitions if needed
+};
+
+// vim: filetype=dts fdm=marker:
