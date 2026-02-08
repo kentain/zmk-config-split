@@ -51,6 +51,7 @@
 //  };
 //};
 
+/*
 / {
     trackball: trackball {
         compatible = "zmk,input-bb-trackball";
@@ -61,8 +62,28 @@
         down-gpios  = <&gpio0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         left-gpios  = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         right-gpios = <&gpio0 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        click-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
     };
   };
+*/
+
+/ {  
+hall_trackball: hall_trackball {  
+compatible = "my,hall-trackball";  
+x-plus-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>; // Right   
+x-minus-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>; // Left  
+y-plus-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>; // Up  
+y-minus-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>; // Down  
+btn-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>; // CLICK!  
+status = "okay";  
+};  
+  
+hall_listener: hall_listener {  
+compatible = "zmk,pointing-device-listener";  
+pointing-device = <&hall_trackball>;  
+};  
+};  
 /* This is the important part: tell the split proxy what device to forward */
 &trackball_split {
     device = <&trackball>;
