@@ -25,65 +25,23 @@
         ;
 };
 
-/// {
-//  tb_kscan: tb_kscan {
-//    compatible = "zmk,kscan-gpio-direct";
-//    input-gpios =
-//        <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* up */
-//      , <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* down */
-//      , <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* left */
-//      , <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* right */
-//      , <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* click */
-//      ;
-//  };
-
-//  tb_sideband: tb_sideband {
-//    compatible = "zmk,kscan-sideband-behaviors";
-//    kscan = <&tb_kscan>;
-//    auto-enable;
-//    wakeup-source;
-//
-//    up    { column = <0>; bindings = <&mmv MOVE_UP>; };
-//    down  { column = <1>; bindings = <&mmv MOVE_DOWN>; };
-//    left  { column = <2>; bindings = <&mmv MOVE_LEFT>; };
-//    right { column = <3>; bindings = <&mmv MOVE_RIGHT>; };
-//    click { column = <4>; bindings = <&mkp LCLK>; };
-//  };
-//};
-
-/*
 / {
-    trackball: trackball {
-        compatible = "zmk,input-bb-trackball";
-        status = "okay";
-        // Pins for Up, Down, Left, Right
-        // Use (GPIO_ACTIVE_LOW | GPIO_PULL_UP) if they are open-drain/switches
-        up-gpios    = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        down-gpios  = <&gpio0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        left-gpios  = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        right-gpios = <&gpio0 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        click-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
-    };
+  hall_trackball0: hall_trackball0 {
+    compatible = "my,hall-trackball";
+    status = "okay";
+    xplus-gpios  = <&gpio0 6 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    xminus-gpios = <&gpio0 7 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    yplus-gpios  = <&gpio0 2 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    yminus-gpios = <&gpio0 1 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    btn-gpios    = <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    scale = <4>;
   };
-*/
+};
 
-/ {  
-hall_trackball: hall_trackball {  
-compatible = "my,hall-trackball";  
-x-plus-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>; // Right   
-x-minus-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>; // Left  
-y-plus-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>; // Up  
-y-minus-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>; // Down  
-btn-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>; // CLICK!  
-status = "okay";  
-};  
-  
-hall_listener: hall_listener {  
-compatible = "zmk,pointing-device-listener";  
-pointing-device = <&hall_trackball>;  
-};  
-};  
+&trackball_split {
+  device = <&hall_trackball0>;
+};
+
 /* This is the important part: tell the split proxy what device to forward */
 &trackball_split {
     device = <&trackball>;

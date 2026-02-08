@@ -19,8 +19,8 @@
 
 /* Enable the listener (it was disabled in corne.dtsi) and point it at the split device */
 &trackball_listener {
-    status = "okay";
-    device = <&trackball_split>;
+  status = "okay";
+  device = <&trackball_split>;
 };
 
 // vim: filetype=dts fdm=marker:

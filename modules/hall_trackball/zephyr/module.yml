@@ -1,0 +1,4 @@
+name: hall_trackball
+build:
+  cmake: .
+  kconfig: Kconfig

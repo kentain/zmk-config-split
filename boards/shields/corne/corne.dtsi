@@ -48,23 +48,26 @@
         >;
     };
 
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
+    / {
+        split_inputs {
+            #address-cells = <1>;
+            #size-cells = <0>;
 
-        trackball_split: trackball_split@0 {
+            trackball_split: trackball_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
             status = "okay";
-            /* device = <...>; set per-side in overlays */
+            /* device = <...>; set on the peripheral that physically has the trackball */
+            };
+        };
+
+        trackball_listener: trackball_listener {
+            compatible = "zmk,input-listener";
+            status = "disabled";
+            /* device = <...>; set on central */
         };
     };
 
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        /* device = <...>; set on the central side */
-    };
 };
 
 /* Per-board/per-shield overrides are OK outside the root node */

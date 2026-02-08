@@ -1,0 +1,19 @@
+description: Hall effect quadrature trackball with optional click button
+
+compatible: "my,hall-trackball"
+
+include:
+  - name: base.yaml
+
+properties:
+  xplus-gpios:  { type: phandle-array, required: true }
+  xminus-gpios: { type: phandle-array, required: true }
+  yplus-gpios:  { type: phandle-array, required: true }
+  yminus-gpios: { type: phandle-array, required: true }
+  btn-gpios:    { type: phandle-array, required: false }
+
+  scale:
+    type: int
+    required: false
+    default: 4
+    description: Multiply decoded delta counts before reporting REL_X/REL_Y.

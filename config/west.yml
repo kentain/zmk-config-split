@@ -36,6 +36,9 @@ manifest:
     - name: zmk-unicode  
       remote: urob  
       revision: v0.3 # Should match ZMK release.  
+    - name: hall_trackball
+      path: modules/hall_trackball
+      revision: main
   self:
     path: config
     
