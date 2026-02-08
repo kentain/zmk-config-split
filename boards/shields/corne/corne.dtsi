@@ -50,14 +50,14 @@
       compatible = "zmk,input-split";
       reg = <0>;
       status = "okay";
-      /* device = <...>; set on the peripheral that physically has the trackball */
+      device = <&trackball_proxy>; /* for the proxy device that physically has the trackball */
     };
   };
 
   trackball_listener: trackball_listener {
     compatible = "zmk,input-listener";
-    status = "disabled";
-    /* device = <...>; set on central */
+    status = "okay";
+    device = <&trackball_proxy>; 
   };
 };
 

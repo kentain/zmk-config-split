@@ -40,15 +40,14 @@
 
 &trackball_split {
   device = <&hall_trackball0>;
+   /* Optional: if you need axis fixes before sending to central, add processors here */
+/* input-processors = <(INPUT_TRANSFORM_X_INVERT)>; */
+  status = "okay";
+}; 
+
+&trackball_listener {
+    status = "disabled"; /* Disable the listener on the peripheral side */
 };
-
-/* This is the important part: tell the split proxy what device to forward */
-&trackball_split {
-    device = <&trackball>;
-
-    /* Optional: if you need axis fixes before sending to central, add processors here */
-    /* input-processors = <(INPUT_TRANSFORM_X_INVERT)>; */
-    };
 
 
 // Enable ZMK mouse emulation listener
