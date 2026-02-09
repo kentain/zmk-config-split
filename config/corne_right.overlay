@@ -52,17 +52,34 @@
 //};
 
 / {
-    trackball: trackball {
-        compatible = "zmk,input-bb-trackball";
-        status = "okay";
-        // Pins for Up, Down, Left, Right
-        // Use (GPIO_ACTIVE_LOW | GPIO_PULL_UP) if they are open-drain/switches
-        up-gpios    = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        down-gpios  = <&gpio0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        left-gpios  = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        right-gpios = <&gpio0 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    };
+  hall_trackball0: hall_trackball0 {
+    compatible = "my,hall-trackball";
+    status = "okay";
+    xplus-gpios  = <&gpio0 6 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    xminus-gpios = <&gpio0 7 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    yplus-gpios  = <&gpio0 2 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    yminus-gpios = <&gpio0 1 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    btn-gpios    = <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+    scale = <4>;
   };
+};
+
+&trackball_split {
+  device = <&hall_trackball0>;
+   /* Optional: if you need axis fixes before sending to central, add processors here */
+/* input-processors = <(INPUT_TRANSFORM_X_INVERT)>; */
+  status = "okay";
+}; 
+
+&trackball_listener {
+    status = "disabled"; /* Disable the listener on the peripheral side */
+};
+
+
+// Enable ZMK mouse emulation listener
+&pinctrl {
+    // any pinctrl definitions if needed
+};
 /* This is the important part: tell the split proxy what device to forward */
 &trackball_split {
     device = <&trackball>;
