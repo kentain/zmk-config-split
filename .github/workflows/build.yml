@@ -110,13 +110,14 @@ jobs:
 
       # NEW: Upload the compiled devicetree so you can grep it locally
       - name: Upload zephyr.dts (${{ env.display_name }})
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: zephyr-dts-${{ env.artifact_name }}
           path: |
             ${{ env.build_dir }}/zephyr/zephyr.dts
             ${{ env.build_dir }}/zephyr/zephyr.dts.pre
-
+            ${{ env.build_dir }}/zephyr/${{ matrix.board }}.pre.tmp
       - name: Rename firmware artifact
         shell: sh -x {0}
         run: |
