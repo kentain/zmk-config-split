@@ -14,13 +14,13 @@
         , <&pro_micro 18 GPIO_ACTIVE_HIGH>
         , <&pro_micro 15 GPIO_ACTIVE_HIGH>
         , <&pro_micro 14 GPIO_ACTIVE_HIGH>
-        ;
+    status = "okay";
 };
 
 /* Enable the listener (it was disabled in corne.dtsi) and point it at the split device */
 &trackball_listener {
   status = "okay";
-/*  device = <&trackball_split>;*/
+  device = <&trackball_split>;
 };
 &trackball_split {
     status = "disabled";
