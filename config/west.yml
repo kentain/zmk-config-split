@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: zmkcommunity
+      url-base: https://github.com/zmkcommunity
     # dongle_display
     - name: englmaxi
       url-base: https://github.com/englmaxi
@@ -16,6 +18,10 @@ manifest:
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
+    - name: zmk-config-shields
+      remote: zmkcommunity
+      revision: main
+      path: boards/shields
     # dongle_display
     - name: zmk-dongle-display
       remote: englmaxi
