@@ -19,8 +19,8 @@
 
 / {
     chosen {
-        zephyr,display = &oled;
-        zmk,kscan = &kscan0;
+    /*    zephyr,display = &oled; not using oled here?*/ 
+        zmk,kscan = <&kscan0>;
         zmk,physical-layout = &foostan_corne_6col_layout;
     };
 
