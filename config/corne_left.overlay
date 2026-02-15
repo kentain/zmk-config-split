@@ -24,7 +24,7 @@
   device = <&trackball_split>;
 };
 &trackball_split {
-    status = "disabled";
+    status = "okay";
 };
 
 // vim: filetype=dts fdm=marker:
